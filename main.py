@@ -1,6 +1,12 @@
 import pandas as pd
 import os
 import subprocess
+#TODO: os.path.join
+#TODO: make it more generalizable
+#TODO: Deal with the phantom row columns that keep showing up
+#TODO: keep outputs cleaner
+#TODO: Do this in a less insane way
+
 def print_sep():
     print("-----------------------------------------")
 
@@ -61,7 +67,7 @@ def parse_experiment_file(filename):
                     get = 0                
 
     # open output text file
-    allsentences = open('trial_info.txt', 'w')
+    allsentences = open('get_word_info/trial_info.txt', 'w')
 
     for row in sentences:
         allsentences.write(str(row))
@@ -73,14 +79,14 @@ def parse_experiment_file(filename):
 
 def format_for_gpt2():
     import csv
-    with open("trial_info.txt", "r") as reader:
+    with open("get_word_info/trial_info.txt", "r") as reader:
         lineNo = 0
         conds = {1: ("PREP_DAT",True),
                 2: ("PREP_DAT",False),
                 3: ("COM_SBJ",True),
                 4: ("COM_SBJ",False),
                 5: ("FILLER", False)}
-        writer = csv.DictWriter(open("script_items_pivot.csv","w"),fieldnames=["row","item","condition","ambiguity","Sentence"])
+        writer = csv.DictWriter(open("get_word_info/trial_info_formatted.csv","w"),fieldnames=["row","item","condition","ambiguity","Sentence"])
         writer.writeheader()
         for line in reader: # find the sentence, item, condition, ambiguity
             line = line.split()
@@ -171,7 +177,7 @@ def get_gpt2_surps():
     #I commented that out for cross-platformness. SUFFER!
 
 
-    in_f = open("script_items_pivot.csv", "r")
+    in_f = open("get_word_info/trial_info_formatted.csv", "r")
     stims = csv.DictReader(in_f)
 
     out = []
@@ -201,7 +207,7 @@ def get_gpt2_surps():
 
             out.append(row)
 
-    with open("script_items_pivot.gpt2.csv", "w") as out_f:
+    with open("get_word_info/gpt2_surps.csv", "w") as out_f:
         writer = csv.DictWriter(out_f, fieldnames = out[0].keys())
         writer.writeheader()
         writer.writerows(out)
@@ -209,8 +215,8 @@ def get_gpt2_surps():
 
 def add_disamb():#add idxs of interest
     import csv
-    with open("script_items_pivot.gpt2.csv") as csv_reader:
-        with open("idx_of_interest.csv","w") as writer:
+    with open("get_word_info/gpt2_surps.csv") as csv_reader:
+        with open("get_word_info/idx_of_interest.csv","w") as writer:
             rows = []
             reader = csv.DictReader(csv_reader)
             csvWriter = csv.DictWriter(writer,fieldnames=list(reader.fieldnames)+["zdisambPositionAmb","zdisambPositionUnamb","zdisambPosition_0idx"])
@@ -254,7 +260,7 @@ def add_freqs():
     import math
     import re
 
-    coca_freqs = csv.DictReader(open("freqs_coca.csv"))#tells it where the freqs at
+    coca_freqs = csv.DictReader(open("raw_data/freqs_coca.csv"))#tells it where the freqs at
 
     freqs = {}
     for row in coca_freqs:
@@ -264,8 +270,8 @@ def add_freqs():
         return freqs.get(re.sub("[.,?!;:']", "", word.lower()), 0)
 
     fillers = {}
-    with open("idx_of_interest.csv", "r") as rd:
-        with open("words_surp_length_freq.csv","w") as wr:
+    with open("get_word_info/idx_of_interest.csv", "r") as rd:
+        with open("get_word_info/freq.csv","w") as wr:
             reader = csv.DictReader(rd)
             writer = csv.DictWriter(wr,fieldnames=list(reader.fieldnames)+["lg_freq","len"])
             writer.writeheader()
@@ -280,7 +286,7 @@ def add_spillover():
     import pandas as pd
     from numpy import nan
 
-    df = pd.read_csv("words_surp_length_freq.csv")
+    df = pd.read_csv("get_word_info/freq.csv")
     #spillover: where the "subject" is the same and the "Sentence" but word_pos is word_pos -1 or word_pos-2
     def getspillover(row,amount):
         if row["word_pos"]-amount < 0:
@@ -293,7 +299,7 @@ def add_spillover():
     print("spillover 1!")
     df["spillover_2"] = df.apply(lambda row: getspillover(row,2),axis=1,result_type="reduce")
     print("spillover 2")
-    df.to_csv("all_predictors.csv",na_rep="NA")
+    df.to_csv("get_word_info/word_info.csv",na_rep="NA")
     print("DONE")
 
 
@@ -306,22 +312,22 @@ def clean_eyetracking_files():
 
 
     #replace 0 FP times with NA
-    df = pd.read_csv("fp.ixs")
+    df = pd.read_csv("raw_data/fp.ixs")
     df = df.astype(pd.Int64Dtype(),copy=True)
     df = df.replace(0,nan)
-    df.to_csv("fp_clean.ixs",na_rep="NA")
+    df.to_csv("eyetrack_data/fp_clean.ixs",na_rep="NA")
 
     #pandas should autointerepret the ,, columns of RO as NA
 
-    ro_df = pd.read_csv("ro.ixs")
+    ro_df = pd.read_csv("raw_data/ro.ixs")
     ro_df = ro_df.astype(pd.Int64Dtype(),copy=True)
-    ro_df.to_csv("ro_clean.ixs",na_rep="NA")
+    ro_df.to_csv("eyetrack_data/ro_clean.ixs",na_rep="NA")
 
 
 def split_eyetrack_items():#an artifact of me being a fool
     filenames = ["fp","ro"]
     for fn in filenames:
-        with open(fn+"_clean.ixs") as reader:
+        with open("eyetrack_data/"+fn+"_clean.ixs") as reader:
             rows = reader.readlines()
             header = rows[0]
             rows = rows[1:]
@@ -332,7 +338,7 @@ def split_eyetrack_items():#an artifact of me being a fool
                     rowItem = int(rowList[3])
                     if rowItem == itemNum:
                         toWrite.append(row)
-                with open(f"eyetrack_files/{fn}/{itemNum+80}.ixs","w") as writer:
+                with open(f"eyetrack_data/{fn+"_by_item"}/{itemNum+80}.ixs","w") as writer:
                     writer.writelines(toWrite)
 
 
@@ -344,21 +350,21 @@ def wideform_data():
 
 
 
-    df = pd.read_csv("all_predictors.csv")
+    df = pd.read_csv("get_word_info/word_info.csv")
     df = df[df["condition"]=="FILLER"]
 
     #if you are wondering why I did it this way, just know my old code was even more foolhardy
     def add_eye_data_cols(row):
         item = row["item"]
         wordPos1 = row["word_pos"]+1
-        rodf = pd.read_csv(os.path.join("eyetrack_files/ro",f"{item}.ixs"))
+        rodf = pd.read_csv(os.path.join("eyetrack_data/ro_by_item",f"{item}.ixs"))
         rodf = rodf[pd.notna(rodf[f"R{wordPos1}"])]
 
         subj = rodf["subj"].astype(pd.Int16Dtype(),copy=True).apply(lambda val:f"ro_{val}")
         row = pd.concat([row,pd.Series(list(rodf[f"R{wordPos1}"]),list(subj),dtype=pd.Int16Dtype())])
 
         
-        fpdf = pd.read_csv(os.path.join("eyetrack_files/fp",f"{item}.ixs"))
+        fpdf = pd.read_csv(os.path.join("eyetrack_data/fp_by_item",f"{item}.ixs"))
         fpdf = fpdf[pd.notna(fpdf[f"R{wordPos1}"])]
 
         subj = fpdf["subj"].astype(pd.Int16Dtype(),copy=True).apply(lambda val:f"fp_{val}")
@@ -387,7 +393,7 @@ def fake_target_longform():#repeat each nonfiller item 77 times to match the sha
     import pandas as pd
     import numpy as np
 
-    df = pd.read_csv("all_predictors.csv")
+    df = pd.read_csv("get_word_info/word_info.csv")
     df = df[df["condition"] != "FILLER"]#only grab target items
     df = pd.DataFrame(np.repeat(df.values,77,axis=0))
     
@@ -408,88 +414,89 @@ def grab_WOIs():
 
 #------------
 
-parse_experiment_file("ad.script")
-with open("trial_info.txt") as trial_info:
-    print("Parsed Experimental Info:")
-    print("\n".join(trial_info.readlines(4)))
+if __name__=="__main__":
+    parse_experiment_file("raw_data/ad.script")
+    with open("get_word_info/trial_info.txt") as trial_info:
+        print("Parsed Experimental Info:")
+        print("\n".join(trial_info.readlines(4)))
 
-print_sep()
+    print_sep()
 
-format_for_gpt2()
-print("Formatted for GPT2:")
-print_df = pd.read_csv("script_items_pivot.csv")
-print(print_df)
-    
-print_sep()
+    format_for_gpt2()
+    print("Formatted for GPT2:")
+    print_df = pd.read_csv("get_word_info/trial_info_formatted.csv")
+    print(print_df)
+        
+    print_sep()
 
-if not os.path.isfile("script_items_pivot.gpt2.csv"):#getting surprisals takes a long time
-    get_gpt2_surps()
-    print("Got GPT2 Surps:")
-    print_df = pd.read_csv("script_items_pivot.gpt2.csv")
+    if not os.path.isfile("get_word_info/gpt2_surps.csv"):#getting surprisals takes a long time
+        get_gpt2_surps()
+        print("Got GPT2 Surps:")
+        print_df = pd.read_csv("get_word_info/gpt2_surps.csv")
+        print(print_df)
+
+        print_sep()
+
+    add_disamb()
+    print("Added idxs of interest:")
+    print_df = pd.read_csv("get_word_info/idx_of_interest.csv")
     print(print_df)
 
     print_sep()
 
-add_disamb()
-print("Added idxs of interest:")
-print_df = pd.read_csv("idx_of_interest.csv")
-print(print_df)
+    add_freqs()
+    print("Added freq column:")
+    print_df = pd.read_csv("get_word_info/freq.csv")
+    print(print_df)
 
-print_sep()
+    print_sep()
 
-add_freqs()
-print("Added freq column:")
-print_df = pd.read_csv("words_surp_length_freq.csv")
-print(print_df)
+    add_spillover()
+    print("Added spillover columns:")
+    print_df = pd.read_csv("get_word_info/word_info.csv")
+    print(print_df)
 
-print_sep()
+    #NOTE: Here and below only works on the filler data because that's the eyetracking data I had. My bad!
+    clean_eyetracking_files()
+    print("Cleaned eyetracking files:")
+    print_df = pd.read_csv("eyetrack_data/fp_clean.ixs")
+    print(print_df)
+    print_df = pd.read_csv("eyetrack_data/ro_clean.ixs")
+    print(print_df)
 
-add_spillover()
-print("Added spillover columns:")
-print_df = pd.read_csv("all_predictors.csv")
-print(print_df)
+    print_sep()
 
-#NOTE: Here and below only works on the filler data because that's the eyetracking data I had. My bad!
-clean_eyetracking_files()
-print("Cleaned eyetracking files:")
-print_df = pd.read_csv("fp_clean.ixs")
-print(print_df)
-print_df = pd.read_csv("ro_clean.ixs")
-print(print_df)
+    split_eyetrack_items()
+    print("Split eyetracking files into individual items")
+    print_sep()
 
-print_sep()
+    if not os.path.isfile("filler_wideform_data.csv"):#this code takes forever
+        wideform_data()
+        print("Made data wideform:")
+        print_df = pd.read_csv("filler_wideform_data.csv")
+        print(print_df)
+        print_sep()
 
-split_eyetrack_items()
-print("Split eyetracking files into individual items")
-print_sep()
-
-if not os.path.isfile("filler_wideform_data.csv"):#this code takes forever
-    wideform_data()
-    print("Made data wideform:")
-    print_df = pd.read_csv("filler_wideform_data.csv")
+    subprocess.run(["Rscript","pivot.r"])#in theory, we now have beautiful longform data
+    print_df = pd.read_csv("filler_longform_data.csv")
     print(print_df)
     print_sep()
 
-subprocess.run(["Rscript","pivot.r"])#in theory, we now have beautiful longform data
-print_df = pd.read_csv("filler_longform_data.csv")
-print(print_df)
-print_sep()
+    fake_target_longform()
+    print("Data is long-form:")
+    print_df = pd.read_csv("longform_targets.csv")
+    print(print_df)
 
-fake_target_longform()
-print("Data is long-form:")
-print_df = pd.read_csv("longform_targets.csv")
-print(print_df)
+    print_sep()
 
-print_sep()
+    grab_WOIs()
+    print("target WOIs grabbed:")
+    print_df = pd.read_csv("target_interest_items.csv")
+    print(print_df)
 
-grab_WOIs()
-print("target WOIs grabbed:")
-print_df = pd.read_csv("target_interest_items.csv")
-print(print_df)
+    print_sep()
 
-print_sep()
-
-subprocess.run(["Rscript","analysis.R"])#in theory this should print out our analysis
+    subprocess.run(["Rscript","analysis.R"])#in theory this should print out our analysis
 
 
 

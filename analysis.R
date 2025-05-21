@@ -20,16 +20,19 @@ target_data$subject <- as.factor(target_data$subject)
 
 levels(target_data$subject) == levels(filler_data$subject)
 
-summary(target_data[target_data$ambiguity=="True",]$sum_surprisal)
-summary(target_data[target_data$ambiguity=="False",]$sum_surprisal)
+
+#summary(target_data[target_data$ambiguity=="True",]$sum_surprisal)
+#summary(target_data[target_data$ambiguity=="False",]$sum_surprisal)
 
 surp_ambig_pred <- predict(filler.model_surp,newdata=target_data[target_data$ambiguity=="True",],allow.new.levels=TRUE)
 nosurp_ambig_pred <- predict(filler.model_nosurp,newdata=target_data[target_data$ambiguity=="True",],allow.new.levels=TRUE)
 surp_unambig_pred <- predict(filler.model_surp,newdata=target_data[target_data$ambiguity=="False",],allow.new.levels=TRUE)
 nosurp_unambig_pred <- predict(filler.model_nosurp,newdata=target_data[target_data$ambiguity=="False",],allow.new.levels=TRUE)
+print("AMBIGUOUS, SURP MODEL:")
 summary(surp_ambig_pred)
-sd(surp_ambig_pred)
+print("AMBIGUOUS, NO_SURP MODEL:")
 summary(nosurp_ambig_pred)
+print("UNAMBIGUOUS, SURP MODEL:")
 summary(surp_unambig_pred)
-sd(surp_unambig_pred)
+print("UNAMBIGUOUS, NOSURP MODEL:")
 summary(nosurp_unambig_pred)
