@@ -408,8 +408,14 @@ def grab_WOIs():
     import pandas as pd
 
     df = pd.read_csv("longform_targets.csv")
-    df2 = df[((df['ambiguity'] == False) & (df['word_pos'] == df['disamb_0idx'])) |
-    ((df['ambiguity'] == True) & (df['word_pos'] == df['disamb_0idx']-1))]
+    #if it's a prep_dat and ambiguious, -1. Else, just use the index?
+
+    df2= df[((df["condition"]=="PREP_DAT") & (df["ambiguity"]==True) & (df["word_pos"]==df["disamb_0idx"]-1))|
+    (~((df["condition"]=="PREP_DAT") & (df["ambiguity"]==True)) & (df["word_pos"]==df["disamb_0idx"]))]
+
+    #df2 = df[((df['ambiguity'] == False) & (df['word_pos'] == df['disamb_0idx'])) |
+    #((df['ambiguity'] == True) & (df['word_pos'] == df['disamb_0idx']-1))]
+    
     df2.to_csv("target_interest_items.csv",na_rep="NA")
 
 #------------

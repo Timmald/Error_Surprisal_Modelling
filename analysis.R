@@ -1,5 +1,6 @@
 install.packages("lme4", repos = "https://cloud.r-project.org")
 library(lme4)
+library(ggplot2)
 filler_data = read.csv("filler_longform_data.csv")
 str(filler_data)
 filler_data$subject <- as.factor(filler_data$subject)
@@ -20,9 +21,13 @@ target_data$subject <- as.factor(target_data$subject)
 
 levels(target_data$subject) == levels(filler_data$subject)
 
+print("AMBIGUOUS SENTENCES: WOI SURPRISAL")
+summary(target_data[target_data$ambiguity=="True",]$sum_surprisal)
+print("UNAMBIGUOUS SENTENCES: WOI SURPRISAL")
+summary(target_data[target_data$ambiguity=="False",]$sum_surprisal)
 
-#summary(target_data[target_data$ambiguity=="True",]$sum_surprisal)
-#summary(target_data[target_data$ambiguity=="False",]$sum_surprisal)
+
+print("------------------------")
 
 surp_ambig_pred <- predict(filler.model_surp,newdata=target_data[target_data$ambiguity=="True",],allow.new.levels=TRUE)
 nosurp_ambig_pred <- predict(filler.model_nosurp,newdata=target_data[target_data$ambiguity=="True",],allow.new.levels=TRUE)
@@ -36,3 +41,20 @@ print("UNAMBIGUOUS, SURP MODEL:")
 summary(surp_unambig_pred)
 print("UNAMBIGUOUS, NOSURP MODEL:")
 summary(nosurp_unambig_pred)
+
+
+results = data.frame(ambiguity = rep("Ungrammatical",length(surp_ambig_pred)),pred = surp_ambig_pred)
+results2 = data.frame(ambiguity = rep("Grammatical",length(surp_unambig_pred)),pred = surp_unambig_pred)
+results<-rbind(results,results2)
+
+
+target_data$item_diffs <- target_data[target_data$ambiguity=="True",]$sum_surprisal-target_data[target_data$ambiguity=="False",]$sum_surprisal
+pretty_for_plotting = target_data$ambiguity <- factor(target_data$ambiguity, levels = c("True", "False"), labels = c("Ungrammatical", "Grammatical"))
+ggplot(data=target_data, aes(x=item_diffs)) +
+    geom_density()+
+    geom_vline(data=target_data,aes(xintercept = mean(item_diffs)))+
+    labs(title="Difference in WOI Surprisal over Grammaticality",x="Difference (bits)",y="Density")
+
+ggplot(data=results, aes(x=pred,group=ambiguity,fill=ambiguity)) +
+    geom_density(alpha=0.4)+
+    labs(title="Distributions of Predicted FP time",x="Predicted FP (ms)",y="Density",fill="Grammaticality")
