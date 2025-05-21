@@ -1,0 +1,261 @@
+,item,condition,ambiguity,Sentence
+0,1,PREP_DAT,False,"As soon as the meeting ended, Paul gave the project files to his assistant, eager to wrap up the day's tasks."
+1,1,PREP_DAT,True,"As soon as the meeting ended, Paul gave the project files his assistant, eager to wrap up the day's tasks."
+2,2,PREP_DAT,False,"Unsure whether it was the right decision, Mia sold her furniture to a local dealer before moving out of her old apartment."
+3,2,PREP_DAT,True,"Unsure whether it was the right decision, Mia sold her furniture a local dealer before moving out of her old apartment."
+4,3,PREP_DAT,False,"Without waiting for a reply, Alan showed his portfolio to the hiring manager and moved on to the next part of the interview."
+5,3,PREP_DAT,True,"Without waiting for a reply, Alan showed his portfolio the hiring manager and moved on to the next part of the interview."
+6,4,PREP_DAT,False,I was surprised when I heard that Mark had given his collection of vintage records to his cousin as a birthday present.
+7,4,PREP_DAT,True,I was surprised when I heard that Mark had given his collection of vintage records his cousin as a birthday present.
+8,5,PREP_DAT,False,"Realizing he wouldn't use it anymore, Lucas sold his gaming console to his neighbor, hoping to make a bit of extra cash."
+9,5,PREP_DAT,True,"Realizing he wouldn't use it anymore, Lucas sold his gaming console his neighbor, hoping to make a bit of extra cash."
+10,6,PREP_DAT,False,"After finishing her shift, Emily handed the documents to her supervisor and hurried out of the office."
+11,6,PREP_DAT,True,"After finishing her shift, Emily handed the documents her supervisor and hurried out of the office."
+12,7,PREP_DAT,False,"Without thinking twice, Michael tossed his keys to his roommate before heading out for the weekend."
+13,7,PREP_DAT,True,"Without thinking twice, Michael tossed his keys his roommate before heading out for the weekend."
+14,8,PREP_DAT,False,"Although the weather was terrible, Sarah delivered a package to the neighbors and then went inside to warm up."
+15,8,PREP_DAT,True,"Although the weather was terrible, Sarah delivered a package the neighbors and then went inside to warm up."
+16,9,PREP_DAT,False,"Before the event started, the coach distributed the team jerseys to the players and explained the game plan."
+17,9,PREP_DAT,True,"Before the event started, the coach distributed the team jerseys the players and explained the game plan."
+18,10,PREP_DAT,False,"After weeks of planning, Jessica finally presented the proposal to the board members, confident they would approve it."
+19,10,PREP_DAT,True,"After weeks of planning, Jessica finally presented the proposal the board members, confident they would approve it."
+20,11,PREP_DAT,False,"As the concert came to an end, the singer threw a signed poster to the audience, which caused a frenzy among the fans."
+21,11,PREP_DAT,True,"As the concert came to an end, the singer threw a signed poster the audience, which caused a frenzy among the fans."
+22,12,PREP_DAT,False,The teacher always makes sure to explain the new concepts to the students before assigning the homework.
+23,12,PREP_DAT,True,The teacher always makes sure to explain the new concepts the students before assigning the homework.
+24,13,PREP_DAT,False,"While reviewing his monthly expenses, Jason realized he had sent money to the wrong account and quickly contacted the bank."
+25,13,PREP_DAT,True,"While reviewing his monthly expenses, Jason realized he had sent money the wrong account and quickly contacted the bank."
+26,14,PREP_DAT,False,"Late at night, the teacher emailed the assignment to her students, reminding them of the deadline the next day."
+27,14,PREP_DAT,True,"Late at night, the teacher emailed the assignment her students, reminding them of the deadline the next day."
+28,15,PREP_DAT,False,I didn't realize that Paul had given his old books to the library until I saw them on the donation shelf.
+29,15,PREP_DAT,True,I didn't realize that Paul had given his old books the library until I saw them on the donation shelf.
+30,16,PREP_DAT,False,"To lighten her load, Rebecca sold her furniture to a neighbor, planning to travel abroad with just a suitcase."
+31,16,PREP_DAT,True,"To lighten her load, Rebecca sold her furniture a neighbor, planning to travel abroad with just a suitcase."
+32,17,PREP_DAT,False,"Before the meeting began, David showed the latest report to his boss, eager to hear feedback."
+33,17,PREP_DAT,True,"Before the meeting began, David showed the latest report his boss, eager to hear feedback."
+34,18,PREP_DAT,False,"By the end of the week, I had mailed the documents to the lawyer, hoping the matter would be resolved quickly."
+35,18,PREP_DAT,True,"By the end of the week, I had mailed the documents the lawyer, hoping the matter would be resolved quickly."
+36,19,PREP_DAT,False,"Hoping to seal the deal, the real estate agent showed the property to a group of potential buyers at sunset."
+37,19,PREP_DAT,True,"Hoping to seal the deal, the real estate agent showed the property a group of potential buyers at sunset."
+38,20,PREP_DAT,False,The instructor promised extra help and later explained the difficult concept to her struggling student in the afternoon.
+39,20,PREP_DAT,True,The instructor promised extra help and later explained the difficult concept her struggling student in the afternoon.
+40,21,PREP_DAT,False,"As part of her morning routine, the teacher read a story to the children while they sat quietly on the carpet."
+41,21,PREP_DAT,True,"As part of her morning routine, the teacher read a story the children while they sat quietly on the carpet."
+42,22,PREP_DAT,False,"After finishing his workout, Greg tossed the ball to his friend before heading home for dinner."
+43,22,PREP_DAT,True,"After finishing his workout, Greg tossed the ball his friend before heading home for dinner."
+44,23,PREP_DAT,False,Sarah eagerly showed the photograph to her parents when she returned from her trip to Italy.
+45,23,PREP_DAT,True,Sarah eagerly showed the photograph her parents when she returned from her trip to Italy.
+46,24,PREP_DAT,False,"To improve customer relations, the company offered a discount to its loyal clients during the holiday season."
+47,24,PREP_DAT,True,"To improve customer relations, the company offered a discount its loyal clients during the holiday season."
+48,25,PREP_DAT,False,Jake delivered a letter to his boss before rushing out of the office to catch his train.
+49,25,PREP_DAT,True,Jake delivered a letter his boss before rushing out of the office to catch his train.
+50,26,PREP_DAT,False,"In a rush to catch the train, Alex tossed his jacket to his friend, hoping to retrieve it later."
+51,26,PREP_DAT,True,"In a rush to catch the train, Alex tossed his jacket his friend, hoping to retrieve it later."
+52,27,PREP_DAT,False,"Without saying a word, Sarah passed the note to her colleague during the meeting."
+53,27,PREP_DAT,True,"Without saying a word, Sarah passed the note her colleague during the meeting."
+54,28,PREP_DAT,False,The artist showed her latest painting to a group of investors at the gallery's opening night.
+55,28,PREP_DAT,True,The artist showed her latest painting a group of investors at the gallery's opening night.
+56,29,PREP_DAT,False,"The little boy proudly handed his drawing to the teacher, eager for her praise."
+57,29,PREP_DAT,True,"The little boy proudly handed his drawing the teacher, eager for her praise."
+58,30,PREP_DAT,False,"My cousin sold his vintage camera to a photography enthusiast, eager to clear space in his studio."
+59,30,PREP_DAT,True,"My cousin sold his vintage camera a photography enthusiast, eager to clear space in his studio."
+60,31,PREP_DAT,False,I didn't realize that Tom tossed the ball to his dog until it was too late and it hit the window.
+61,31,PREP_DAT,True,I didn't realize that Tom tossed the ball his dog until it was too late and it hit the window.
+62,32,PREP_DAT,False,"As the meeting ended, she forwarded the agenda to her manager, ensuring he was informed before the next discussion."
+63,32,PREP_DAT,True,"As the meeting ended, she forwarded the agenda her manager, ensuring he was informed before the next discussion."
+64,33,PREP_DAT,False,The author read a passage from her book to the audience at the bookstore's grand opening.
+65,33,PREP_DAT,True,The author read a passage from her book the audience at the bookstore's grand opening.
+66,34,PREP_DAT,False,"Hoping to catch the last train, Joe rushed to the station and handed his ticket to the conductor with seconds to spare."
+67,34,PREP_DAT,True,"Hoping to catch the last train, Joe rushed to the station and handed his ticket the conductor with seconds to spare."
+68,35,PREP_DAT,False,"During the charity event, they sold homemade crafts to the attendees, raising funds for the community center."
+69,35,PREP_DAT,True,"During the charity event, they sold homemade crafts the attendees, raising funds for the community center."
+70,36,PREP_DAT,False,"After finishing the presentation, Sarah offered a suggestion to the committee in hopes of improving the project's timeline."
+71,36,PREP_DAT,True,"After finishing the presentation, Sarah offered a suggestion the committee in hopes of improving the project's timeline."
+72,37,PREP_DAT,False,"Once the package arrived, I shipped a replacement part to the customer and apologized for the inconvenience."
+73,37,PREP_DAT,True,"Once the package arrived, I shipped a replacement part the customer and apologized for the inconvenience."
+74,38,PREP_DAT,False,"Even though it was late, David sent a message to his boss to confirm the next morning's meeting details."
+75,38,PREP_DAT,True,"Even though it was late, David sent a message his boss to confirm the next morning's meeting details."
+76,39,PREP_DAT,False,I was surprised when David showed the project files to the client without asking for approval first.
+77,39,PREP_DAT,True,I was surprised when David showed the project files the client without asking for approval first.
+78,40,PREP_DAT,False,The company transferred the ownership rights to the new investor after completing the merger last quarter.
+79,40,PREP_DAT,True,The company transferred the ownership rights the new investor after completing the merger last quarter.
+80,41,COM_SBJ,False,The doors to the rooms are locked at night.
+81,41,COM_SBJ,True,The door to the rooms are locked at night.
+82,42,COM_SBJ,False,The schedules for the meetings are posted in the lobby.
+83,42,COM_SBJ,True,The schedule for the meetings are posted in the lobby.
+84,43,COM_SBJ,False,The recipes for the cakes are written in the cookbook.
+85,43,COM_SBJ,True,The recipe for the cakes are written in the cookbook.
+86,44,COM_SBJ,False,The paths through the woods are covered with snow.
+87,44,COM_SBJ,True,The path through the woods are covered with snow.
+88,45,COM_SBJ,False,The explanations for the accidents are unclear to the investigators.
+89,45,COM_SBJ,True,The explanation for the accidents are unclear to the investigators.
+90,46,COM_SBJ,False,The designs of the houses are unique in this neighborhood.
+91,46,COM_SBJ,True,The design of the houses are unique in this neighborhood.
+92,47,COM_SBJ,False,The titles of the essays are written in bold on the first page.
+93,47,COM_SBJ,True,The title of the essays are written in bold on the first page.
+94,48,COM_SBJ,False,The shapes of the sculptures are admired by art critics around the world.
+95,48,COM_SBJ,True,The shape of the sculptures are admired by art critics around the world.
+96,49,COM_SBJ,False,The sounds of the engines are echoing through the entire building.
+97,49,COM_SBJ,True,The sound of the engines are echoing through the entire building.
+98,50,COM_SBJ,False,The directors of the movies were praised for their artistic vision.
+99,50,COM_SBJ,True,The director of the movies were praised for their artistic vision.
+100,51,COM_SBJ,False,The messages from the teachers are being broadcast to all students.
+101,51,COM_SBJ,True,The message from the teachers are being broadcast to all students.
+102,52,COM_SBJ,False,The editors of the magazines are reviewing the articles before publication.
+103,52,COM_SBJ,True,The editor of the magazines are reviewing the articles before publication.
+104,53,COM_SBJ,False,The owners of the cafes are introducing a new menu next month.
+105,53,COM_SBJ,True,The owner of the cafes are introducing a new menu next month.
+106,54,COM_SBJ,False,The painters of the murals are planning a new piece for the downtown area.
+107,54,COM_SBJ,True,The painter of the murals are planning a new piece for the downtown area.
+108,55,COM_SBJ,False,The descriptions of the products are listed on the packaging.
+109,55,COM_SBJ,True,The description of the products are listed on the packaging.
+110,56,COM_SBJ,False,The origins of the rumors are still unclear to the public.
+111,56,COM_SBJ,True,The origin of the rumors are still unclear to the public.
+112,57,COM_SBJ,False,The melodies of the tunes are playing softly in the background.
+113,57,COM_SBJ,True,The melody of the tunes are playing softly in the background.
+114,58,COM_SBJ,False,The styles of the paintings are unique to this artist.
+115,58,COM_SBJ,True,The style of the paintings are unique to this artist.
+116,59,COM_SBJ,False,The sparkles of the jewels are catching everyone's attention.
+117,59,COM_SBJ,True,The sparkle of the jewels are catching everyone's attention.
+118,60,COM_SBJ,False,The formations of the clouds are changing with the wind.
+119,60,COM_SBJ,True,The formation of the clouds are changing with the wind.
+120,61,COM_SBJ,False,"In the distance, the lights in the buildings are barely visible."
+121,61,COM_SBJ,True,"In the distance, the light in the buildings are barely visible."
+122,62,COM_SBJ,False,"After a brief introduction, the leaders of the tours are ready to start the trip."
+123,62,COM_SBJ,True,"After a brief introduction, the leader of the tours are ready to start the trip."
+124,63,COM_SBJ,False,"After the long meeting, the keys to the cabinets are still missing from the office."
+125,63,COM_SBJ,True,"After the long meeting, the key to the cabinets are still missing from the office."
+126,64,COM_SBJ,False,"In the early morning hours, the colors of the curtains were barely noticeable."
+127,64,COM_SBJ,True,"In the early morning hours, the color of the curtains were barely noticeable."
+128,65,COM_SBJ,False,"Despite the confusion, the decisions about the changes are expected by tomorrow."
+129,65,COM_SBJ,True,"Despite the confusion, the decision about the changes are expected by tomorrow."
+130,66,COM_SBJ,False,"At the end of the day, the captains of the ships were finally satisfied with the plans."
+131,66,COM_SBJ,True,"At the end of the day, the captain of the ships were finally satisfied with the plans."
+132,67,COM_SBJ,False,"Following the latest update, the prices of the tickets are set to increase next week."
+133,67,COM_SBJ,True,"Following the latest update, the price of the tickets are set to increase next week."
+134,68,COM_SBJ,False,"After several delays, the managers of the projects were eventually called in for a meeting."
+135,68,COM_SBJ,True,"After several delays, the manager of the projects were eventually called in for a meeting."
+136,69,COM_SBJ,False,"On such short notice, the authors of the novels are doing an impromptu reading session."
+137,69,COM_SBJ,True,"On such short notice, the author of the novels are doing an impromptu reading session."
+138,70,COM_SBJ,False,"During the discussion, the solutions to the problems were brought up several times."
+139,70,COM_SBJ,True,"During the discussion, the solution to the problems were brought up several times."
+140,71,COM_SBJ,False,"Late in the afternoon, the reports on the findings are distributed to the attendees."
+141,71,COM_SBJ,True,"Late in the afternoon, the report on the findings are distributed to the attendees."
+142,72,COM_SBJ,False,"During the renovation, the stairways to the balconies are blocked off for safety reasons."
+143,72,COM_SBJ,True,"During the renovation, the stairway to the balconies are blocked off for safety reasons."
+144,73,COM_SBJ,False,"In the middle of the night, the photographs of the stars are glowing under the soft light."
+145,73,COM_SBJ,True,"In the middle of the night, the photograph of the stars are glowing under the soft light."
+146,74,COM_SBJ,False,"Without further delay, the maps of the trails are printed for distribution."
+147,74,COM_SBJ,True,"Without further delay, the map of the trails are printed for distribution."
+148,75,COM_SBJ,False,"Just before sunset, the bridges to the islands are closed to the public."
+149,75,COM_SBJ,True,"Just before sunset, the bridge to the islands are closed to the public."
+150,76,COM_SBJ,False,"On rainy days, the scents of the flowers are more intense."
+151,76,COM_SBJ,True,"On rainy days, the scent of the flowers are more intense."
+152,77,COM_SBJ,False,"After the long hike, the views of the mountains are breathtaking, leaving us in awe."
+153,77,COM_SBJ,True,"After the long hike, the view of the mountains are breathtaking, leaving us in awe."
+154,78,COM_SBJ,False,"Following the lunch break, the curators of the museums are giving a talk to a group of visitors."
+155,78,COM_SBJ,True,"Following the lunch break, the curator of the museums are giving a talk to a group of visitors."
+156,79,COM_SBJ,False,"Under the microscope, the structures of the cells are revealed in detail."
+157,79,COM_SBJ,True,"Under the microscope, the structure of the cells are revealed in detail."
+158,80,COM_SBJ,False,"Across the field, the movements of the animals are captivating the children."
+159,80,COM_SBJ,True,"Across the field, the movement of the animals are captivating the children."
+160,81,FILLER,True,This is useful for keeping browsing activity private from other users of the same device.
+161,82,FILLER,True,"That's because 90% of the heat energy from climate change goes into the oceans, Willis said."
+162,83,FILLER,True,They both end up crashing through the table from the top of the cage.
+163,84,FILLER,True,Perry suffered his injury after being on the end of a flying knee from Luque that laid him out.
+164,85,FILLER,True,"I'm no food critic, so I'm going to have to slip into cliche here and describe the chowder as ""succulent."""
+165,86,FILLER,True,"The checks were cut in federal court this morning, right here in Rockford."
+166,87,FILLER,True,"We expect someone who wants to work here will have already found us, connected with us, and begun to build a relationship."
+167,88,FILLER,True,Most of us are here to talk about conservative issues first and foremost.
+168,89,FILLER,True,"Selvaggio's companies never actually provided the services, even though customers were billed for them."
+169,90,FILLER,True,This movie is a slippery slope for viewers who will never research the truth about wolves.
+170,91,FILLER,True,I wake up a lot of days and do things I never expected I'd do as a parent.
+171,92,FILLER,True,"We've gathered some of the coolest art, music, food and theater events happening in the city."
+172,93,FILLER,True,"It's still early in the season, but they have some tough losses already."
+173,94,FILLER,True,"Coupled with freezing temps, the fog is making for some slick spots and several crashes were called in prior to 6:30 a.m."
+174,95,FILLER,True,"It's delicious, but then you regret it, because you have heartburn for the rest of the day."
+175,96,FILLER,True,The justices then told the appeals court to take that into consideration in the cross-border case.
+176,97,FILLER,True,"The second class will cover a full Greek meal, which will then be served."
+177,98,FILLER,True,I don't understand how these folks have apparently never heard of mousepads.
+178,99,FILLER,True,I always tend to imagine what these characters and their voices would sound like.
+179,100,FILLER,True,They also mentioned they didn't know where all these crazy rumors were coming from.
+180,101,FILLER,True,Ships traveling through these waters are at the mercy of a continuously harsh climate.
+181,102,FILLER,True,"Though some are better than others, I think they all underestimate their audiences."
+182,103,FILLER,True,"At that point they were playing for pride, and hoping to make the final score more respectable."
+183,104,FILLER,True,Jimmy Butler should expect a harsh atmosphere when he faces the Philadelphia 76ers this season.
+184,105,FILLER,True,"Today, some sites use an unintended loophole to detect when people are browsing in Incognito Mode."
+185,106,FILLER,True,"The dragon appears happy when questions are answered, and he becomes hungry when he needs to be fed more answers."
+186,107,FILLER,True,Fit a beet into the front of the spiralizer where spikes hold the vegetable in place.
+187,108,FILLER,True,But it's a mystery where my mother got the inspiration for this dish.
+188,109,FILLER,True,The institute's archeologists believe they once covered holes where sacrifices were perhaps buried.
+189,110,FILLER,True,That's part of being on a team where you're still trying to figure things out.
+190,111,FILLER,True,"At that point, the partial closure will have lasted 18 days."
+191,112,FILLER,True,"That session will occur 11 a.m. at the White House, according to a congressional official."
+192,113,FILLER,True,"Sometimes one of the people will bring some cleaning help in for her specific needs, but that is not for the common areas."
+193,114,FILLER,True,This event will feature four title matches and one additional bout.
+194,115,FILLER,True,You can make it as a lasagna with pasta sheets and plenty of cheese or you can make your own ravioli.
+195,116,FILLER,True,"I brought everything I could with me, including my current reading projects, so I could go to my favorite cafe."
+196,117,FILLER,True,"But before you check that one out, stretch your mind a bit with some of these sci-fi brain busters."
+197,118,FILLER,True,"In this view, promoting body acceptance would only undermine behavior change and encourage obesity."
+198,119,FILLER,True,"Zanette says there is no guarantee when, or even if, the designation will be approved."
+199,120,FILLER,True,"Personally, little of how others lead their lives has affected my life and the relationship I have with my wife and kids."
+200,121,FILLER,True,"But, to be honest, I was interacting with folks that just did not adequately communicate in English."
+201,122,FILLER,True,"I love rooms decorated with touches of Americana, or just her colors."
+202,123,FILLER,True,"Originally, I thought I would go on a second date, but there was no real connection."
+203,124,FILLER,True,Think how much happier the world would be if we all added this plugin before his next album comes out!
+204,125,FILLER,True,She's as smart as they come and she's so with it.
+205,126,FILLER,True,Those who know better know that all good things come to an end.
+206,127,FILLER,True,What happened here may well be a sign of things to come if the drought continues.
+207,128,FILLER,True,Some of his ideas sound like the rhetoric of someone who doesn't plan to be around when the chickens come home to roost.
+208,129,FILLER,True,It's about a friendship between a little girl and her teddy bear.
+209,130,FILLER,True,Polly and Elliott Mayfield last year welcomed a baby girl into their family.
+210,131,FILLER,True,Officials responded to Norwich for the report of an 11-year-old girl in cardiac arrest.
+211,132,FILLER,True,It feels really good to be a part of the first Surf League championship.
+212,133,FILLER,True,"The adage of ""if it seems too good to be true, it is,"" holds true at the shows."
+213,134,FILLER,True,Wade has had a pretty good season featuring 13.8 points per game and a sweet little goodbye moment with his old pal.
+214,135,FILLER,True,So take the time to get to know your engineering team before you're working on the next big project together.
+215,136,FILLER,True,It's been months and I don't even know where to begin.
+216,137,FILLER,True,"Most officers that I know are gun guys anyway, but there are those who are not."
+217,138,FILLER,True,The NBA's youngest stars also know they can work off bad food a little more easily.
+218,139,FILLER,True,"They're all there, in a neat little helpfully compiled list."
+219,140,FILLER,True,So what finally happened was I got a deal for very little money to develop Star Wars.
+220,141,FILLER,True,They fell in love and were married six months later.
+221,142,FILLER,True,I sure would love to cycle to work (and have in the past) but it is not currently feasible.
+222,143,FILLER,True,"Bring your friends and family, and tell everyone you know how much you love those places."
+223,144,FILLER,True,I'm a good cook and I know how to make all kinds of soups.
+224,145,FILLER,True,These artisans know how to make affordable jewelry look like a million bucks.
+225,146,FILLER,True,Here are a few players who will certainly be drafted but did not quite make the cut.
+226,147,FILLER,True,She says the very qualities that make us successful are the same ones that can take us down.
+227,148,FILLER,True,And now I have a career where I'm making enough money to live.
+228,149,FILLER,True,Make sure that the account you use to enter the contest includes your real name and a contact email.
+229,150,FILLER,True,"The technique gets its name because, like snowshoes, it distributes the heavy load evenly across a wide area."
+230,151,FILLER,True,"What ensued Friday night was a mixture of boos, cheers and general awkwardness."
+231,152,FILLER,True,That being said I have heard from a lot of people that they want to do it anyways.
+232,153,FILLER,True,You enjoy attracting influential people who bring advantage and romantic intrigue.
+233,154,FILLER,True,I don't think that system is perfect but it was better than it is now.
+234,155,FILLER,True,We want to hear what you think about this article.
+235,156,FILLER,True,Get some rest and don't even think about this place for the next two weeks.
+236,157,FILLER,True,"For the first time ever, the awards program will livestream globally."
+237,158,FILLER,True,"Now comes the good part boys and girls, the part the Main Stream Media doesn't want to talk about."
+238,159,FILLER,True,"What kind of job would you get at your age, with your skill set if you got fired from the Chicago Police Department?"
+239,160,FILLER,True,Each posted position has a detailed job description so students know what their duties would be if selected.
+240,161,FILLER,True,The sales tax increase is tied to transportation and would fund more than a dozen major transit projects.
+241,162,FILLER,True,"All three of these elements come together when Grunkle Stan throws a fair in town, full of scarily cheap rides."
+242,163,FILLER,True,It was a decision that would later come to haunt the Japanese company.
+243,164,FILLER,True,I think I may be part dolphin because I only ever come up to breathe.
+244,165,FILLER,True,I have a maid come in once a month to clean my apartment.
+245,166,FILLER,True,I'm sure there is a girl out there that will appreciate you.
+246,167,FILLER,True,I'm the girl who just thinks up something as I'm walking into a tattoo parlor.
+247,168,FILLER,True,I couldn't believe that Amanda let the girl take her phone and never did anything about it.
+248,169,FILLER,True,"Last year, the life-insurance company surveyed more than 1,000 people about the most memorable love letters ever penned."
+249,170,FILLER,True,The pickles definitely make a statement.
+250,171,FILLER,True,"Tesla has only about $5 billion in cash, and it has lost money every quarter save three in its decade-and-a-half existence."
+251,172,FILLER,True,"Precipitation may return Sunday night with rain, snow and freezing rain before 3 a.m."
+252,173,FILLER,True,"In fandom, there are some people who express their love through hate."
+253,174,FILLER,True,We don't think about tapping into what makes us human.
+254,175,FILLER,True,I just think something needs to change.
+255,176,FILLER,True,Either way I think he's a prime candidate for a breakout season next year.
+256,177,FILLER,True,He says it's time for him to hang up his mask and retire.
+257,178,FILLER,True,This series of articles will be talking about the fundamentals of deck construction.
+258,179,FILLER,True,"Politicians should be thinking about their futures, because that future might just depend on how they vote."
+259,180,FILLER,True,The FBI and CIA were both in the know about the chances of this happening.

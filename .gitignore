@@ -4,4 +4,6 @@
 /.Rproj.user
 /.vscode
 /Rplots.pdf
-/jupyter_hell
+/old_bad_code/jupyter_hell
+.conda
+__pycache__
